@@ -12,11 +12,22 @@ export default function TextForm(props) {
     let newText = text.toLowerCase();
     setText(newText);
   };
-  
+
   const handleClrClick = () => {
     console.log("Clear button was clicked");
-    let newText = '';
+    let newText = "";
     setText(newText);
+  };
+
+  const handleCopy = () => {
+    var text = document.getElementById("myBox");
+    text.select();
+    navigator.clipboard.writeText(text.value);
+  };
+
+  const handleExtraSpaces = () => {
+    let newtext = text.split(/[ ]+/);
+    setText(newtext.join(" "));
   };
 
   const handleOnChange = (event) => {
@@ -46,6 +57,12 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn-primary mx-1" onClick={handleClrClick}>
           Clear text
+        </button>
+        <button className="btn btn-primary mx-1" onClick={handleCopy}>
+          Copy text
+        </button>
+        <button className="btn btn-primary mx-1" onClick={handleExtraSpaces}>
+          Remove Extra Spaces
         </button>
       </div>
 
