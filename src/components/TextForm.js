@@ -2,19 +2,19 @@ import React, { useState } from "react";
 
 export default function TextForm(props) {
   const handleUpClick = () => {
-    console.log("Uppercase was clicled" + text);
+    console.log("Uppercase was clicked" + text);
     let newText = text.toUpperCase();
     setText(newText);
   };
 
   const handleLoClick = () => {
-    console.log("Lowercase was clicled" + text);
+    console.log("Lowercase was clicked" + text);
     let newText = text.toLowerCase();
     setText(newText);
   };
   
   const handleClrClick = () => {
-    console.log("Clear button was clicled");
+    console.log("Clear button was clicked");
     let newText = '';
     setText(newText);
   };
